@@ -4,10 +4,9 @@
 // Set wrongGuesses equal to an empty array
 // Set images to an array contataining all of your images links as strings (in order)
 var secretWord = null;
-
-
-
-
+var correctGuesses = [];
+var wrongGuesses = [];
+var image = [];
 
 
 // in the prepareGame() function below
