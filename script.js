@@ -6,7 +6,7 @@
 var secretWord = null;
 var correctGuesses = [];
 var wrongGuesses = [];
-var image = [];
+var image = ['images hangman-0.png','images hangman-1.png','images hangman-2.png','images hangman-3.png','images hangman-4.png','images hangman-5.png','images hangman-6.png', '', '', ''];
 
 
 // in the prepareGame() function below
@@ -16,22 +16,23 @@ var image = [];
 // call the drawHangman() function
 function prepareGame() {
   secretWord = ['J','A','V','A','S','C','R', 'I', 'P', 'T'];
-
-    
-  
+  correctGuesses = [];
+  wrongGuesses = [];
+   drawWord();
+  drawHangman();
 }
 
 // in this onWin() function below 
 // 1. alert "You won!"
 function onWin() {
-  
+  alert("You won!");
   
 }
 
 // in this onLose() function below 
 // 1. alert "You lost!"
 function onLose() {
-  
+ alert("You lost!");
   
   
 }
@@ -51,17 +52,23 @@ function checkIfWon() {
 // 1. declare a variable misses and set it equal to the length of wrongGuesses array
 // 2. if misses is less than 6 return false else return true
 function checkIfLost() {
-  
-  
+  var misses = wrongGuesses.length
+  if (misses < 6) {
+    return false 
+} else {
+    return true;
+}
+
   
   
 }
 
 // in the onCorrectGuess() function below
-// 1. add the the letter variable to the array correctGuesses
+// 1. add the letter variable to the array correctGuesses
 // 2. call the drawWord function
 // 3. if the checkIfWon() is returns true call the onWin() function 
-function onCorrectGuess(letter) {
+function onCorrectGuess(letter) { 
+   correctGuesses.push(letter);
     
   
   
